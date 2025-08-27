@@ -1,1 +1,106 @@
-Hello Landon!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSCE 242 — Web Applications | Landon Searight</title>
+  <!-- Author: Landon Searight | Course: Web Apps -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1216;
+      --card: #ffffff;
+      --text: #1b1f24;
+      --muted: #525a66;
+      --accent: #DA291C;    /* red */
+      --accent-2: #F0C419;  /* gold */
+      --link: #B58900;
+      --link-hover: #8C6A00;
+      --border: #e7e9ee;
+      --shadow: 0 10px 30px rgba(0,0,0,.12);
+      --radius: 18px;
+      --maxw: 920px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 85% -10%, rgba(218,41,28,.18), transparent 60%),
+        radial-gradient(1200px 600px at -10% 100%, rgba(240,196,25,.15), transparent 60%),
+        linear-gradient(180deg, #0f1216, #131820);
+      color:var(--text);
+      line-height:1.65;
+    }
+    #wrap{
+      max-width:var(--maxw);
+      margin:56px auto;
+      padding:40px 36px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    header{
+      display:flex; flex-wrap:wrap; align-items:flex-end; gap:10px;
+      border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:18px;
+    }
+    #class-name{
+      margin:0; font-size:2.2rem; line-height:1.15; letter-spacing:.2px;
+      color:var(--accent); font-weight:800;
+    }
+    #student-name{
+      margin-left:auto; font-weight:800; color:var(--accent-2);
+      background:linear-gradient(90deg, #fef7d6, #fff);
+      border:1px solid var(--border); padding:8px 12px; border-radius:12px;
+    }
+    p{margin:0 0 12px;}
+    #course-desc{color:var(--muted);}
+
+    h2{
+      margin:26px 0 10px; font-size:1.4rem; color:#14233A; font-weight:800;
+      border-left:6px solid var(--accent); padding-left:10px;
+    }
+
+    ul{padding-left:22px; margin:12px 0;}
+    li{margin:6px 0;}
+
+    a{color:var(--link); text-decoration:none; font-weight:700;}
+    a:hover, a:focus{color:var(--link-hover); text-decoration:underline; outline:none;}
+
+    footer{margin-top:20px; color:var(--muted); font-size:.95rem;}
+  </style>
+</head>
+<body>
+  <main id="wrap" role="main">
+    <header>
+      <h1 id="class-name">CSCE 242 — Web Applications</h1>
+      <div id="student-name">Landon Searight</div>
+    </header>
+
+    <p id="course-desc">
+      This course introduces core front-end web development concepts, including semantic HTML, accessible design,
+      responsive CSS, and basic client-side interactivity. Throughout the semester, assignments focus on clean structure,
+      readable code, and consistent styling while building toward small but complete web experiences.
+    </p>
+
+    <h2 id="assignments-heading">Assignments</h2>
+    <ul id="assignments-list">
+      <li>
+        <a id="assignment1-link" href="assignments/assignment1/index.html">Assignment 1 — Manchester United Webpage</a>
+      </li>
+      <!-- Add more as they’re created:
+      <li><a href="assignments/assignment2/index.html">Assignment 2 — …</a></li>
+      -->
+    </ul>
+
+    <footer>
+      <span>© <span id="year"></span> Landon Searight · CSCE 242</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

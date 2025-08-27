@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boston Red Sox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- use google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* set colors and sizes for theme */
+    :root{
+      --navy: #0C2340;
+      --red:  #BD3039;
+      --cream: #F7F6F2;
+      --ink: #1a1f2a;
+      --muted: #5b6270;
+      --card: #ffffff;
+      --border: #E6E8EE;
+      --table-stripe: #f8f9fc;
+      --shadow: 0 14px 40px rgba(0,0,0,.18);
+      --radius: 18px;
+      --maxw: 980px;
+    }
+
+    /* set page font and background image */
+    body{
+      margin:0;
+      font-family:"Montserrat", system-ui, Arial;
+      color:var(--ink);
+      line-height:1.7;
+      background:
+        linear-gradient(180deg, rgba(12,35,64,.75), rgba(12,35,64,.75)),
+        url("https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/RedSoxPrimary_HangingSocks.svg/800px-RedSoxPrimary_HangingSocks.svg.png");
+      background-size:cover;
+      background-attachment:fixed;
+      background-position:center;
+    }
+
+    /* box that holds page content */
+    #content{
+      max-width:var(--maxw);
+      margin:54px auto;
+      padding:42px 40px;
+      background:var(--card);
+      border: 1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    /* style the main title */
+    h1{
+      margin:0;
+      font-size:2.4rem;
+      color:var(--red);
+      font-weight:800;
+    }
+
+    /* style the sub header */
+    h2{
+      margin:26px 0 10px;
+      font-size:1.5rem;
+      font-weight:800;
+      color:var(--navy);
+      border-left:8px solid var(--red);
+      padding-left:12px;
+    }
+
+    /* style normal text */
+    p{ margin:0 0 14px; color:var(--ink); }
+    #intro{ color:var(--muted); }
+
+    /* style image gallery */
+    #gallery{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:16px;
+      margin: 16px 0 6px;
+    }
+    #gallery img{
+      width:100%;
+      padding:10px;
+      background: var(--cream);
+      border: 2px solid var(--navy);
+      border-radius:14px;
+    }
+
+    /* style table */
+    table{
+      width:100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 6px;
+      border: 1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    thead th{
+      background: #f0f3f9;
+      color: var(--navy);
+      font-weight:800;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align:left;
+    }
+    tbody td{
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr:nth-child(even){
+      background: var(--table-stripe);
+    }
+  </style>
+</head>
+<body>
+  <!-- main content box -->
+  <div id="content">
+    <!-- page title -->
+    <h1>Boston Red Sox</h1>
+
+    <!-- sub header -->
+    <h2>A Legacy at Fenway Park</h2>
+
+    <!-- two paragraphs -->
+    <p id="intro">
+      The Boston Red Sox are one of Major League Baseball’s most storied franchises, known for passionate fans,
+      iconic players, and the unmistakable charm of Fenway Park.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et lectus a odio ultrices sodales.
+      Curabitur dictum, dolor eu pharetra consectetur, purus odio volutpat augue.
+    </p>
+
+    <!-- two images -->
+    <div id="gallery">
+      <img src="https://img.mlbstatic.com/mlb-images/image/upload/t_16x9/t_w2208/mlb/y9fpi5emkuugjiyzd6wl"
+           alt="Fenway Park">
+      <img src="https://city-png.b-cdn.net/thumbnail/thumbnail_public/uploads/preview/boston-red-sox-baseball-team-hd-transparent-background-701751712412590ddzwnanlmq.png"
+           alt="Red Sox Logo">
+    </div>
+
+    <!-- table with 3 columns and 5 rows -->
+    <h2>Notable Seasons</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Record</th>
+          <th>Highlight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1912</td>
+          <td>105–47</td>
+          <td>First season at Fenway, World Series win</td>
+        </tr>
+        <tr>
+          <td>2004</td>
+          <td>98–64</td>
+          <td>Broke 86-year curse</td>
+        </tr>
+        <tr>
+          <td>2007</td>
+          <td>96–66</td>
+          <td>Another championship run</td>
+        </tr>
+        <tr>
+          <td>2013</td>
+          <td>97–65</td>
+          <td>Boston Strong season</td>
+        </tr>
+        <tr>
+          <td>2018</td>
+          <td>108–54</td>
+          <td>Record wins, World Series champs</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

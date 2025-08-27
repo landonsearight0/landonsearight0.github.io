@@ -1,67 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Manchester United Football Club</title>
   <!-- Author: Landon Searight | Course: Web Apps -->
+
+  <!-- Font (appealing, modern, highly readable) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Man United–inspired theme */
+      --bg-dark: #0b0f14;      /* charcoal */
+      --card: #ffffff;         /* content background */
+      --text: #1b1f24;         /* primary text */
+      --muted: #4e5561;        /* secondary text */
+      --accent: #DA291C;       /* United red */
+      --accent-2: #F0C419;     /* gold */
+      --accent-3: #14233A;     /* navy-ink for small accents */
+      --link: #B58900;         /* warm gold-brown for links */
+      --link-hover: #8C6A00;   /* darker hover */
+      --border: #e7e9ee;       /* soft border */
+      --table-stripe: #fafbff; /* very light stripe */
+      --shadow: 0 10px 30px rgba(0,0,0,.15);
+      --radius: 18px;
+      --maxw: 920px;
+    }
+
+    /* Background with subtle gradient that “makes sense” for the theme */
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 85% -10%, rgba(218,41,28,.18), transparent 60%),
+        radial-gradient(1200px 600px at -10% 100%, rgba(240,196,25,.15), transparent 60%),
+        linear-gradient(180deg, #0b0f14, #0d131a);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Formatted content wrapper */
+    #content{
+      max-width: var(--maxw);
+      margin: 48px auto;
+      padding: 40px 36px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* Headings with themed colors */
+    h1, h2{
+      margin: 0 0 14px;
+      line-height: 1.2;
+    }
+    h1{
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.2px;
+    }
+    h2{
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent-3);
+      border-left: 6px solid var(--accent);
+      padding-left: 10px;
+      margin-top: 28px;
+    }
+
+    /* Paragraphs */
+    p{
+      margin: 0 0 14px;
+      color: var(--text);
+    }
+    #course-description{
+      color: var(--muted);
+    }
+
+    /* Repo link block (below description, before list) */
+    #repo-link{
+      margin: 16px 0 22px;
+      padding: 12px 14px;
+      background: linear-gradient(180deg, #fff, #fcfcfd);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    #repo-link strong{
+      color: var(--accent);
+    }
+
+    /* Images row */
+    .media{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 12px 0 8px;
+      align-items: flex-start;
+    }
+    .media img{
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    /* List */
+    #reasons-list{
+      padding-left: 22px;
+    }
+    #reasons-list li{
+      margin: 6px 0;
+    }
+
+    /* Table styling (cleaner than border="1") */
+    #players-table{
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,.05);
+    }
+    #players-table th, #players-table td{
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+    #players-table thead th{
+      background: linear-gradient(180deg, #f9fafc, #f2f5f9);
+      color: var(--accent-3);
+      font-weight: 700;
+    }
+    #players-table tbody tr:nth-child(even){
+      background: var(--table-stripe);
+    }
+
+    /* Links: remove underlines and recolor */
+    a{
+      color: var(--link);
+      text-decoration: none;     /* remove underline */
+      font-weight: 600;
+    }
+    a:hover, a:focus{
+      color: var(--link-hover);
+      text-decoration: underline; /* tasteful hover underline */
+      outline: none;
+    }
+
+    /* “Assignments” style hook (if you add a list of assignment links later) */
+    #assignments a{
+      color: var(--link);
+      text-decoration: none;
+    }
+    #assignments a:hover{
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* Small helpers */
+    .muted{ color: var(--muted); }
+    .spacer{ height: 6px; }
+  </style>
 </head>
 <body>
-  <h1>Manchester United Football Club</h1>
+  <div id="content" role="main">
+    <h1 id="page-title">Manchester United Football Club</h1>
 
-  <p>
-    Manchester United Football Club, often referred to simply as Man United, is one of the most famous football clubs in the world. 
-    The club is based in Old Trafford, Greater Manchester, England, and was founded in 1878 as Newton Heath before changing its name in 1902. 
-    Manchester United has built a rich tradition of winning trophies, cultivating passionate supporters, and attracting legendary players. 
-    The club has become an important part of both English football and global sports culture.
-  </p>
-  <p>
-    Over the decades, Manchester United has won numerous domestic league titles, FA Cups, and European competitions. 
-    Its success has been fueled by famous managers like Sir Alex Ferguson and celebrated players such as George Best, Eric Cantona, and Cristiano Ronaldo. 
-    The club is also recognized for its famous stadium, Old Trafford, often called the “Theatre of Dreams.” 
-    Today, Manchester United continues to be followed by millions of fans worldwide and remains one of the most valuable sports teams.
-  </p>
+    <!-- Course-style description (kept from your original content) -->
+    <p id="course-description" class="muted">
+      Manchester United Football Club, often referred to simply as Man United, is one of the most famous football clubs in the world.
+      The club is based in Old Trafford, Greater Manchester, England, and was founded in 1878 as Newton Heath before changing its name in 1902.
+      Manchester United has built a rich tradition of winning trophies, cultivating passionate supporters, and attracting legendary players.
+      The club has become an important part of both English football and global sports culture.
+    </p>
+    <p>
+      Over the decades, Manchester United has won numerous domestic league titles, FA Cups, and European competitions.
+      Its success has been fueled by famous managers like Sir Alex Ferguson and celebrated players such as George Best, Eric Cantona, and Cristiano Ronaldo.
+      The club is also recognized for its famous stadium, Old Trafford, often called the “Theatre of Dreams.”
+      Today, Manchester United continues to be followed by millions of fans worldwide and remains one of the most valuable sports teams.
+    </p>
 
-  <!-- Two images -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2023_07_31_arne_mueseler_00060-Verbessert-RR_%2853106651455%29.jpg/330px-2023_07_31_arne_mueseler_00060-Verbessert-RR_%2853106651455%29.jpg" 
-       alt="Old Trafford Stadium" width="520">
-  <img src="https://americanreddevils.com/wp-content/uploads/2021/12/1920-x-1080-11.png" 
-       alt="Manchester United Club Crest" width="300">
+    <!-- GITHUB REPO LINK (added BELOW description, PRIOR to the list).
+         🔁 Replace the href with your actual repository URL. -->
+    <div id="repo-link" aria-label="GitHub repository link">
+      <strong>Code Repository:</strong>
+      <a id="repo-anchor" href="https://github.com/yourusername/yourrepo" target="_blank" rel="noopener">
+        https://github.com/yourusername/yourrepo
+      </a>
+    </div>
 
-  <!-- Bulleted list -->
-  <h2>Reasons Manchester United is Popular</h2>
-  <ul>
-    <li>History of success in English and European competitions.</li>
-    <li>Famous stadium, Old Trafford, known worldwide.</li>
-    <li>Global fan base with millions of supporters.</li>
-  </ul>
+    <!-- Images -->
+    <div class="media" id="image-row">
+      <img
+        id="img-old-trafford"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2023_07_31_arne_mueseler_00060-Verbessert-RR_%2853106651455%29.jpg/660px-2023_07_31_arne_mueseler_00060-Verbessert-RR_%2853106651455%29.jpg"
+        alt="Old Trafford Stadium" width="520">
+      <img
+        id="img-crest"
+        src="https://americanreddevils.com/wp-content/uploads/2021/12/1920-x-1080-11.png"
+        alt="Manchester United Club Crest" width="300">
+    </div>
 
-  <!-- Table -->
-  <h2>Some Legendary Manchester United Players</h2>
-  <table border="1" cellpadding="6">
-    <tr>
-      <th>Player</th>
-      <th>Notable Achievements</th>
-    </tr>
-    <tr>
-      <td>George Best</td>
-      <td>Won the Ballon d'Or in 1968 and known for incredible skill and flair.</td>
-    </tr>
-    <tr>
-      <td>Ryan Giggs</td>
-      <td>Holds the record for most appearances for Manchester United.</td>
-    </tr>
-    <tr>
-      <td>Cristiano Ronaldo</td>
-      <td>Won multiple Premier League titles and the Ballon d'Or in 2008 while at United.</td>
-    </tr>
-  </table>
+    <!-- Bulleted list -->
+    <h2 id="reasons-title">Reasons Manchester United is Popular</h2>
+    <ul id="reasons-list">
+      <li>History of success in English and European competitions.</li>
+      <li>Famous stadium, Old Trafford, known worldwide.</li>
+      <li>Global fan base with millions of supporters.</li>
+    </ul>
 
-  <!-- Two external links -->
-  <h2>Learn More</h2>
-  <p>
-    Visit the official <a href="https://www.manutd.com" target="_blank" rel="noopener">Manchester United website</a> and 
-    the <a href="https://en.wikipedia.org/wiki/Manchester_United_F.C." target="_blank" rel="noopener">Manchester United Wikipedia page</a> 
-    for more information.
-  </p>
+    <!-- Table -->
+    <h2 id="players-title">Some Legendary Manchester United Players</h2>
+    <table id="players-table" role="table" aria-label="Legendary Manchester United Players">
+      <thead>
+        <tr>
+          <th scope="col">Player</th>
+          <th scope="col">Notable Achievements</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>George Best</td>
+          <td>Won the Ballon d'Or in 1968 and known for incredible skill and flair.</td>
+        </tr>
+        <tr>
+          <td>Ryan Giggs</td>
+          <td>Holds the record for most appearances for Manchester United.</td>
+        </tr>
+        <tr>
+          <td>Cristiano Ronaldo</td>
+          <td>Won multiple Premier League titles and the Ballon d'Or in 2008 while at United.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- External links (assignment-like links restyled) -->
+    <h2 id="learn-more-title">Learn More</h2>
+    <p id="learn-more">
+      Visit the official
+      <a id="link-official" href="https://www.manutd.com" target="_blank" rel="noopener">Manchester United website</a>
+      and the
+      <a id="link-wiki" href="https://en.wikipedia.org/wiki/Manchester_United_F.C." target="_blank" rel="noopener">Manchester United Wikipedia page</a>
+      for more information.
+    </p>
+
+    <!-- Example “assignments” section (optional, shows link styling) -->
+    <div id="assignments" class="muted">
+      <div class="spacer"></div>
+      <!-- If you add assignment links later, they'll inherit the no-underline + recolor rules -->
+      <!-- <a href="#" target="_blank" rel="noopener">Assignment 1</a> · <a href="#">Assignment 2</a> -->
+    </div>
+  </div>
 </body>
 </html>
